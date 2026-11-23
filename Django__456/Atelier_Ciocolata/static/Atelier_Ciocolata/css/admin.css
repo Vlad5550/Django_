@@ -1,0 +1,36 @@
+/* LABORATORUL 4 – CERINȚA 9: background, header, breadcrumbs și rând selectat. */
+:root {
+     --primary: #6f1838; --secondary: #9b3158; --accent: #e6b8c8; --body-bg: #fff5f7; --header-bg: #50132c; --breadcrumbs-bg: #7c2949; 
+}
+body { 
+    background: #fff5f7; 
+}
+#header { 
+    background: #50132c; 
+    color: white; 
+}
+#branding h1, #branding a:link, #branding a:visited { 
+    color: white; 
+}
+div.breadcrumbs {
+    background: #7c2949; 
+    color: white; 
+}
+#changelist table tbody tr.selected { 
+    background: #f5c6d7; 
+}
+
+#changelist table tbody tr.selected td, #changelist table tbody tr.selected th { 
+    background: #f5c6d7; 
+}
+
+.module h2, .module caption, .inline-group h2 { 
+    background: #7c2949; 
+}
+
+.button, input[type=submit], input[type=button], .submit-row input { 
+    background: #6f1838; 
+}
+a:link, a:visited { 
+    color: #7c2949; 
+}

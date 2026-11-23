@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Local configuration and user uploads
+.env
+media/
+
+# IDE
+.vscode/
+.idea/
+
+# Mesaje JSON cu date personale generate local
+Atelier_Ciocolata/Mesaje_nerezolvate/

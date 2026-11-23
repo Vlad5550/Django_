@@ -1,0 +1,14 @@
+{% extends 'Atelier_Ciocolata/baza.html' %}
+{% block titlu %}Adaugă produs - Atelier de ciocolată{% endblock %}
+{% block continut %}
+<style>.formular-produs{max-width:700px;margin:25px auto;padding:22px;background:#fff8fb;border:1px solid #e6c8d3;border-radius:14px}.formular-produs p{display:flex;flex-direction:column;gap:5px}.formular-produs input,.formular-produs select,.formular-produs textarea{padding:8px}.formular-produs .errorlist{color:#b00020}</style>
+<section class="formular-produs">
+<h1>Adaugă o prăjitură</h1>
+<p>Prețul se calculează automat din costul de preparare și adaosul procentual.</p>
+<form method="post">
+    {% csrf_token %}
+    {{ formular.as_p }}
+    <button type="submit">Salvează produsul</button>
+</form>
+</section>
+{% endblock %}

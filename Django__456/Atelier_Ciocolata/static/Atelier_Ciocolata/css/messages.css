@@ -1,0 +1,9 @@
+/* LABORATORUL 5 – TASK 1: stil separat pentru debug, info, success, warning și error. */
+/* Fiecare nivel are stil propriu, diferit de afișarea implicită Django. */
+.mesaje-sistem { margin: 12px 0; }
+.mesaj-sistem { padding: 12px 16px; margin: 8px 0; border-radius: 8px; border-left: 6px solid; }
+.mesaj-sistem.debug { background: #f1f1f1; color: #444; border-color: #777; font-family: monospace; }
+.mesaj-sistem.info { background: #eaf4ff; color: #164a75; border-color: #2785c7; }
+.mesaj-sistem.success { background: #eaf8ed; color: #155d2a; border-color: #249447; font-weight: bold; }
+.mesaj-sistem.warning { background: #fff6df; color: #735000; border-color: #e2a400; }
+.mesaj-sistem.error { background: #fff0f0; color: #8a1111; border-color: #c62828; font-weight: bold; }

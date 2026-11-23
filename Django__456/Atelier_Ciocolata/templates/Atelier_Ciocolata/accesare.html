@@ -1,0 +1,14 @@
+{% extends 'Atelier_Ciocolata/baza.html' %}
+{% block titlu %}Accesare {{ accesare.id }}{% endblock %}
+{% block continut %}
+<h1>Accesare {{ accesare.id }}</h1>
+<p>id: {{ accesare.id }}</p>
+<p>ip_client: {{ accesare.ip_client }}</p>
+<p>url: {{ accesare.url }}</p>
+<p>parametri: {{ accesare.parametri }}</p>
+<p>data: {{ accesare.data }}</p>
+<p>string_url: {{ accesare.string_url }}</p>
+<p>pagina: {{ accesare.pagina }}</p>
+<div>calculeaza_data: {{ accesare.calculeaza_data|safe }}</div>
+<p>lista_parametri: {{ accesare.lista_parametri }}</p>
+{% endblock %}

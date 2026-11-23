@@ -1,5 +1,0 @@
-<div class="paginare">
-    <span>Pagina {{ pagina.number }} din {{ pagina.paginator.num_pages|default:1 }}</span>
-    {% if pagina.has_previous %}<a href="?{% if query_string %}{{ query_string }}&{% endif %}page={{ pagina.previous_page_number }}">Pagina anterioară</a>{% endif %}
-    {% if pagina.has_next %}<a href="?{% if query_string %}{{ query_string }}&{% endif %}page={{ pagina.next_page_number }}">Pagina următoare</a>{% endif %}
-</div>

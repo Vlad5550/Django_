@@ -1,7 +1,0 @@
-{% extends "admin/base.html" %}
-{% load static %}
-{# LABORATORUL 4 – CERINȚA 9: sigla apare în header-ul Admin. #}
-{% block branding %}
-<div id="site-name"><a href="{% url 'admin:index' %}"><img src="{% static 'Atelier_Ciocolata/imagini/ciocolata.svg' %}" alt="Atelier" style="height:34px;vertical-align:middle;margin-right:10px"> Atelier de Ciocolată</a></div>
-{% endblock %}
-{% block extrastyle %}{{ block.super }}<link rel="stylesheet" href="{% static 'Atelier_Ciocolata/css/admin.css' %}">{% endblock %}

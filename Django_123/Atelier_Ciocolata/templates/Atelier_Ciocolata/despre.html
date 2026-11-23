@@ -1,0 +1,20 @@
+{% extends 'Atelier_Ciocolata/baza.html' %}
+{% load static %}
+{% block title %}Despre noi{% endblock %}
+{% comment %}LAB 2, TASK 2, SUBPUNCTELE 7 și 8: template cu minimum două secțiuni și imagine statică.{% endcomment %}
+{% block content %}
+<h1>Despre Atelierul de Ciocolată</h1>
+{# LAB 2, TASK 2, SUBPUNCTUL 1: prima secțiune. #}
+<section class="panel">
+    <h2>Povestea noastră</h2>
+    <p>Atelierul de Ciocolată este un mic magazin dedicat dulciurilor artizanale și cadourilor făcute cu grijă.</p>
+</section>
+{# LAB 2, TASK 2, SUBPUNCTUL 1: a doua secțiune și imagine. #}
+<section class="panel image-panel">
+    <div>
+        <h2>Ingredientele noastre</h2>
+        <p>Alegem cacao, nuci, fructe și alte ingrediente pentru gusturi echilibrate și produse proaspete.</p>
+    </div>
+    <img src="{% static 'imagini/praline.svg' %}" alt="Cutie cu praline artizanale">
+</section>
+{% endblock %}

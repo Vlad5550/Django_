@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="900" viewBox="0 0 1440 900">
+<defs><style>
+.title{font:bold 30px Arial;fill:#4b241b}.entity{fill:#fff8f0;stroke:#633322;stroke-width:3}.weak{fill:#fff8f0;stroke:#633322;stroke-width:3}.double{fill:none;stroke:#633322;stroke-width:2}.name{font:bold 21px Arial;fill:#633322}.attr{font:16px Arial;fill:#39251f}.rel{stroke:#8c5a3c;stroke-width:3;fill:none}.reltext{font:bold 17px Arial;fill:#7a3926}.key{font:bold 16px Arial;fill:#39251f}.note{font:15px Arial;fill:#39251f}
+</style></defs>
+<rect width="1440" height="900" fill="#fffaf5"/>
+<text x="720" y="45" text-anchor="middle" class="title">Diagrama ER — Atelierul de Ciocolată</text>
+<!-- relationships first -->
+<path class="rel" d="M330 190 H420"/><text class="reltext" x="373" y="175" text-anchor="middle">1 : N</text>
+<path class="rel" d="M900 145 H760 V180 H750"/><text class="reltext" x="820" y="132" text-anchor="middle">1 : N</text>
+<path class="rel" d="M900 350 H820 V310 H750"/><text class="reltext" x="825" y="337" text-anchor="middle">1 : N</text>
+<path class="rel" d="M420 340 H320 V575 H350"/><text class="reltext" x="330" y="460" text-anchor="middle">M : N</text>
+<path class="rel" d="M585 400 V535"/><text class="reltext" x="610" y="475">1 : N identificatoare</text>
+<path class="rel" d="M900 650 H800 V650 H760"/><text class="reltext" x="830" y="635" text-anchor="middle">1 : N</text>
+<!-- entities -->
+<rect class="entity" x="40" y="90" width="290" height="210" rx="7"/>
+<text class="name" x="185" y="122" text-anchor="middle">CATEGORIE</text>
+<text class="attr" x="60" y="157">PK id_categorie : INT</text><text class="attr" x="60" y="183">nume : VARCHAR</text><text class="attr" x="60" y="209">descriere : TEXT</text><text class="attr" x="60" y="235">culoare : VARCHAR</text><text class="attr" x="60" y="261">sigla : VARCHAR</text><text class="attr" x="60" y="287">ordine : INT</text>
+<rect class="entity" x="420" y="90" width="340" height="310" rx="7"/>
+<text class="name" x="590" y="122" text-anchor="middle">PRODUS</text>
+<text class="attr" x="440" y="158">PK id_produs : INT</text><text class="attr" x="440" y="184">nume : VARCHAR</text><text class="attr" x="440" y="210">descriere : TEXT</text><text class="attr" x="440" y="236">pret : DECIMAL</text><text class="attr" x="440" y="262">gramaj_g : INT</text><text class="attr" x="440" y="288">procent_cacao : FLOAT</text><text class="attr" x="440" y="314">tip : ENUM</text><text class="attr" x="440" y="340">disponibil : BOOLEAN</text><text class="attr" x="440" y="366">arome : VARCHAR[] (vector)</text>
+<rect class="entity" x="900" y="75" width="300" height="155" rx="7"/>
+<text class="name" x="1050" y="108" text-anchor="middle">BRAND</text><text class="attr" x="920" y="145">PK id_brand : INT</text><text class="attr" x="920" y="172">nume : VARCHAR</text><text class="attr" x="920" y="199">tara_origine : VARCHAR</text>
+<rect class="entity" x="900" y="280" width="300" height="155" rx="7"/>
+<text class="name" x="1050" y="313" text-anchor="middle">AMBALAJ</text><text class="attr" x="920" y="350">PK id_ambalaj : INT</text><text class="attr" x="920" y="377">material : ENUM</text><text class="attr" x="920" y="404">capacitate_buc : INT</text><text class="attr" x="920" y="428">reciclabil : BOOLEAN</text>
+<rect class="entity" x="40" y="500" width="310" height="190" rx="7"/>
+<text class="name" x="195" y="533" text-anchor="middle">INGREDIENT</text><text class="attr" x="60" y="570">PK id_ingredient : INT</text><text class="attr" x="60" y="597">nume : VARCHAR</text><text class="attr" x="60" y="624">origine : VARCHAR</text><text class="attr" x="60" y="651">certificat_bio : BOOLEAN</text>
+<!-- weak entity with double outline -->
+<rect class="weak" x="420" y="535" width="340" height="180" rx="7"/><rect class="double" x="427" y="542" width="326" height="166" rx="5"/>
+<text class="name" x="590" y="572" text-anchor="middle">LOT_PRODUCTIE (slabă)</text><text class="attr" x="440" y="612">Cheie parțială: nr_lot : INT</text><text class="attr" x="440" y="639">data_productie : DATE</text><text class="attr" x="440" y="666">data_expirare : DATE</text><text class="attr" x="440" y="693">cantitate : INT</text><text class="key" x="590" y="734" text-anchor="middle">PK compusă: id_produs + nr_lot</text>
+<rect class="entity" x="900" y="555" width="300" height="175" rx="7"/>
+<text class="name" x="1050" y="588" text-anchor="middle">SEDIU_COMPANIE</text><text class="attr" x="920" y="625">PK id_sediu : INT</text><text class="attr" x="920" y="652">nume : VARCHAR</text><text class="attr" x="920" y="679">adresa : VARCHAR</text><text class="attr" x="920" y="706">telefon : VARCHAR</text>
+<!-- legend -->
+<rect x="40" y="770" width="1160" height="85" rx="8" fill="#f2e4d7" stroke="#b98b6c"/>
+<text class="note" x="65" y="802">Relații: Categorie–Produs (1:N), Brand–Produs (1:N), Ambalaj–Produs (1:N), Produs–Ingredient (M:N),</text>
+<text class="note" x="65" y="827">Produs–Lot producție (1:N), Sediu–Lot producție (1:N). Tipuri: VARCHAR, TEXT, DECIMAL, INT, FLOAT, ENUM, BOOLEAN, DATE.</text>
+<text class="note" x="65" y="848">Atributele vectoriale sunt permise doar pentru câmpul arome, conform cerinței laboratorului.</text>
+</svg>

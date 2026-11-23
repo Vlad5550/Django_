@@ -1,0 +1,57 @@
+{% extends 'Atelier_Ciocolata/baza.html' %}
+{% comment %}LAB 2, TASK 1, SUBPUNCTELE 1-4: jurnal, filtre, parametri și tabel.{% endcomment %}
+{% block title %}Jurnalul accesărilor{% endblock %}
+{% block content %}
+<h1>Jurnalul accesărilor</h1>
+<p>Număr total de accesări: <strong>{{ total }}</strong></p>
+
+{% if mod_nr %}
+<section class="panel"><h2>Număr accesări</h2><p>Serverul a înregistrat {{ total }} accesări de la pornire.</p></section>
+{% endif %}
+
+{% if mod_detalii %}
+<section class="panel"><h2>Data și ora accesărilor</h2><ul>
+    {% for id, data in detalii %}<li>#{{ id }} — {{ data }}</li>{% empty %}<li>Nu există accesări.</li>{% endfor %}
+</ul></section>
+{% endif %}
+
+<section class="panel">
+    <h2>Parametri</h2>
+    <p>Număr parametri primiți: {{ nr_parametri }}</p>
+    <p>Nume parametri: {{ nume_parametri|join:", "|default:"niciunul" }}</p>
+</section>
+
+<section class="panel">
+    <h2>Accesări selectate</h2>
+    {% if afiseaza_tabel %}
+    <div class="table-wrap"><table>
+        <thead><tr>{% for coloana in coloane %}<th>{{ coloana }}</th>{% endfor %}</tr></thead>
+        <tbody>
+        {% for rand in randuri_tabel %}<tr>{% for celula in rand %}<td>{{ celula }}</td>{% endfor %}</tr>
+        {% empty %}<tr><td colspan="{{ coloane|length }}">Nu există accesări.</td></tr>{% endfor %}
+        </tbody>
+    </table></div>
+    {% else %}
+        {% for a in accesari %}
+        <article class="access-item">
+            <h3><a href="{% url 'accesare_id' a.id %}">Accesarea #{{ a.id }}</a></h3>
+            <p><strong>Pagina:</strong> {{ a.pagina }}</p>
+            <p><strong>URL:</strong> {{ a.string_url }}</p>
+            <p><strong>IP:</strong> {{ a.ip_client }}</p>
+            <p><strong>Data:</strong> {{ a.data_text }}</p>
+            <p><strong>Parametri:</strong> {{ a.lista_parametri }}</p>
+        </article>
+        {% empty %}<p>Nu există accesări pentru selecția cerută.</p>{% endfor %}
+    {% endif %}
+</section>
+
+{# LAB 2, TASK 1, SUBPUNCTUL 5: statistici afișate după listă/tabel. #}
+<section class="panel">
+    <h2>Statistici pagini</h2>
+    <p>Cea mai puțin accesată pagină: {{ pagina_minima }}</p>
+    <p>Cea mai mult accesată pagină: {{ pagina_maxima }}</p>
+</section>
+
+{# LAB 2, TASK 1, SUBPUNCTELE 1-4: mesajele de eroare apar la finalul conținutului. #}
+{% for mesaj in mesaje %}<p class="error">{{ mesaj }}</p>{% endfor %}
+{% endblock %}

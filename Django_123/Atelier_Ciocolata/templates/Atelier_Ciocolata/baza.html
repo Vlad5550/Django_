@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Atelierul de Ciocolată{% endblock %}</title>
+    {# LAB 2, TASK 2, SUBPUNCTUL 5: CSS din folderul static/css. #}
+    <link rel="stylesheet" href="{% static 'css/nav.css' %}">
+</head>
+<body>
+{# LAB 2, TASK 2, SUBPUNCTELE 2 și 4: header și meniu cu linkuri generate cu url. #}
+<header class="site-header">
+    <a class="brand" href="{% url 'index' %}">Atelierul de Ciocolată</a>
+    <nav>
+        <ul class="menu">
+            <li><a href="{% url 'index' %}">Acasă</a></li>
+            <li><a href="{% url 'despre' %}">Despre</a></li>
+            <li><a href="{% url 'istoric' %}">Istoric</a></li>
+            <li class="dropdown">
+                <a href="{% url 'produse' %}">Magazin ▾</a>
+                <ul class="submenu">
+                    <li><a href="{% url 'produse' %}">Produse</a></li>
+                    <li><a href="{% url 'cos_virtual' %}">Coș virtual</a></li>
+                    <li><a href="{% url 'index' %}#promotii">Promoții</a></li>
+                    <li><a href="{% url 'index' %}#orar">Program</a></li>
+                </ul>
+            </li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
+            <li><a href="{% url 'info' %}">Info</a></li>
+            <li><a href="{% url 'log' %}">Log</a></li>
+        </ul>
+    </nav>
+</header>
+{# LAB 2, TASK 2, SUBPUNCTUL 2: zona main pentru conținutul paginilor. #}
+<main class="container">
+    {% block content %}{% endblock %}
+</main>
+{# LAB 2, TASK 2, SUBPUNCTUL 6: IP din middleware și datele firmei din context processor. #}
+<footer class="site-footer">
+    <p>IP-ul utilizatorului: {{ ip_client }}</p>
+    <p><strong>{{ firma.nume }}</strong> · Înființată în {{ firma.an_infiintare }}</p>
+    <p>{{ firma.adresa }} · Telefon: {{ firma.telefon }} · {{ firma.email }}</p>
+    <p>{{ firma.slogan }}</p>
+    <small>© {% now "Y" %} {{ firma.nume }}. Toate drepturile rezervate.</small>
+</footer>
+</body>
+</html>

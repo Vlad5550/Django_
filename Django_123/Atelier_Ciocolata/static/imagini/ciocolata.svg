@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 360">
+<rect width="520" height="360" rx="28" fill="#ead0b6"/>
+<ellipse cx="260" cy="295" rx="190" ry="28" fill="#b98b6c" opacity=".45"/>
+<g transform="translate(85 66) rotate(-9 170 120)">
+<rect x="10" y="15" width="335" height="210" rx="20" fill="#693322"/>
+<rect x="27" y="31" width="301" height="177" rx="12" fill="#9a5638"/>
+<g fill="#4a2118" stroke="#d29b72" stroke-width="5">
+<rect x="45" y="48" width="78" height="65" rx="10"/><rect x="137" y="48" width="78" height="65" rx="10"/><rect x="229" y="48" width="78" height="65" rx="10"/>
+<rect x="45" y="126" width="78" height="65" rx="10"/><rect x="137" y="126" width="78" height="65" rx="10"/><rect x="229" y="126" width="78" height="65" rx="10"/>
+</g>
+<g fill="#d9a77f"><circle cx="84" cy="79" r="12"/><circle cx="176" cy="79" r="12"/><circle cx="268" cy="79" r="12"/><circle cx="84" cy="157" r="12"/><circle cx="176" cy="157" r="12"/><circle cx="268" cy="157" r="12"/></g>
+</g><text x="260" y="325" text-anchor="middle" font-family="Georgia" font-size="22" fill="#54291d">Ciocolată artizanală</text>
+</svg>

@@ -1,0 +1,36 @@
+{% extends 'Atelier_Ciocolata/baza.html' %}
+{% load static %}
+{% block title %}Acasă | Atelierul de Ciocolată{% endblock %}
+{% comment %}LAB 2, TASK 2, SUBPUNCTUL 3: pagina principală extinde baza.html. TASK 2.8: imagine statică.{% endcomment %}
+{% block content %}
+{# LAB 2, TASK 2, SUBPUNCTUL 1: secțiune de prezentare. #}
+<section class="hero">
+    <div>
+        <p class="eyebrow">Ciocolată artizanală</p>
+        <h1>Bine ai venit la Atelierul de Ciocolată!</h1>
+        <p>Pregătim praline, tablete și cadouri dulci, din ingrediente atent alese.</p>
+        <a class="button" href="{% url 'produse' %}">Descoperă produsele</a>
+    </div>
+    <img src="{% static 'imagini/ciocolata.svg' %}" alt="Praline și bucăți de ciocolată">
+</section>
+{# LAB 2, TASK 2, SUBPUNCTUL 1: prima secțiune de conținut. #}
+<section class="panel">
+    <h2>Produsele noastre</h2>
+    <p>Găsești praline, trufe și tablete de ciocolată cu diferite arome.</p>
+</section>
+{# LAB 2, TASK 2, SUBPUNCTUL 4: submeniu cu ancoră către promoții. #}
+<section class="panel" id="promotii">
+    <h2>Promoții curente</h2>
+    <p>La cutiile cadou pregătite pentru evenimente oferim ambalare specială.</p>
+</section>
+{# LAB 2, TASK 2, SUBPUNCTUL 4: submeniu cu ancoră către program. #}
+<section class="panel" id="orar">
+    <h2>Program de lucru</h2>
+    <p>Luni–Vineri: 09:00–17:00 · Sâmbătă: 10:00–14:00</p>
+</section>
+{# LAB 2, TASK 2, SUBPUNCTUL 1: secțiune suplimentară decisă pentru site. #}
+<section class="panel">
+    <h2>De ce să ne alegi?</h2>
+    <p>Produse realizate cu grijă, ingrediente de calitate și ambalaje potrivite pentru cadouri.</p>
+</section>
+{% endblock %}

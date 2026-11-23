@@ -1,0 +1,7 @@
+{% extends 'Atelier_Ciocolata/baza.html' %}
+{% block title %}Accesarea {{ accesare.id }}{% endblock %}
+{% comment %}LAB 2, TASK 1, SUBPUNCTUL 5: toate informațiile despre accesarea cu ID-ul cerut.{% endcomment %}
+{% block content %}
+<h1>Accesarea #{{ accesare.id }}</h1>
+<pre class="access-details">{{ accesare }}</pre>
+{% endblock %}

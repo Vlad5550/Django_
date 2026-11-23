@@ -1,0 +1,7 @@
+{% extends 'Atelier_Ciocolata/baza.html' %}
+{% comment %}LAB 1, CERINȚELE 2, 3, 7 și 10: titlul tabului, heading și data/ora localizată.{% endcomment %}
+{% block title %}Informații despre server{% endblock %}
+{% block content %}
+<h1>Informații despre server</h1>
+{{ data_html|safe }}
+{% endblock %}

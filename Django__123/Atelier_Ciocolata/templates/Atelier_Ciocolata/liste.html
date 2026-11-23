@@ -1,0 +1,13 @@
+{% extends 'Atelier_Ciocolata/baza.html' %}
+{% block titlu %}Parametri{% endblock %}
+{% block continut %}
+<h1>Parametri primiți</h1>
+{% for parametru in parametri %}
+    <section>
+        <h2>{{ parametru.nume }}</h2>
+        <ul>{% for valoare in parametru.valori %}<li>{{ valoare }}</li>{% endfor %}</ul>
+    </section>
+{% empty %}
+    <p>Nu au fost primiți parametri.</p>
+{% endfor %}
+{% endblock %}

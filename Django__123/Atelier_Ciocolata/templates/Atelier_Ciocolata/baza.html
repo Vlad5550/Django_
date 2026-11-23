@@ -1,0 +1,44 @@
+{% load static %}
+{# LAB 2, Task 2 - cerințele 2, 4, 6 și 7: template de bază, meniu și footer. #}
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block titlu %}Atelier de ciocolată{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'Atelier_Ciocolata/css/nav.css' %}">
+</head>
+<body>
+<header>
+    <nav aria-label="Meniu principal">
+        <ul class="meniu">
+            <li class="cu-submeniu"><a href="{% url 'index' %}">Acasă</a>
+                <ul class="submeniu">
+                    <li><a href="{% url 'index' %}#prezentare">Prezentare</a></li>
+                    <li><a href="{% url 'index' %}#specialitati">Specialități</a></li>
+                    <li><a href="{% url 'index' %}#servicii">Servicii</a></li>
+                    <li><a href="{% url 'index' %}#ambalaje">Ambalaje</a></li>
+                    <li><a href="{% url 'index' %}#evenimente">Evenimente</a></li>
+                </ul>
+            </li>
+            <li><a href="{% url 'despre' %}">Despre</a></li>
+            <li><a href="{% url 'istoric' %}">Istoric</a></li>
+            <li><a href="{% url 'produse' %}">Produse</a></li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
+            <li><a href="{% url 'cos_virtual' %}">Coș virtual</a></li>
+            <li><a href="{% url 'info' %}">Info</a></li>
+            <li><a href="{% url 'log' %}">Log</a></li>
+        </ul>
+    </nav>
+</header>
+<main>
+    {% block continut %}{% endblock %}
+</main>
+<footer>
+    <p>IP: {{ ip_client }}</p> 
+    <p>{{ copyright }}</p>
+    <p>{{ firma.nume }} | Înființare: {{ firma.an_infiintare }} | Telefon: {{ firma.telefon }}</p>
+    <p>Adresă: {{ firma.adresa }} | Specializare: {{ firma.specializare }} | Activitate: {{ firma.tip_activitate }}</p>
+</footer>
+</body>
+</html>

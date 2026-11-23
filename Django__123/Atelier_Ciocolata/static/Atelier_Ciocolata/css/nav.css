@@ -1,0 +1,61 @@
+body { margin: 0; font-family: Arial, sans-serif; color: #382217; background: #fff8f0; }
+header, footer { background: #42251b; color: white; }
+.meniu, .submeniu {
+     list-style: none; padding: 0; margin: 0; 
+    }
+.meniu { 
+    display: flex; flex-wrap: wrap; 
+    }
+.meniu > li {
+     position: relative; 
+    }
+.meniu a { 
+    display: block; padding: 1rem; text-decoration: none; color: white; 
+}
+.meniu a:hover, .meniu a:focus { 
+    background: #73452e; 
+}
+.submeniu { 
+    display: none; 
+    position: absolute; 
+    top: 100%; 
+    left: 0; 
+    min-width: 180px; 
+    background: #42251b; 
+    z-index: 2; 
+}
+.cu-submeniu:hover .submeniu, .cu-submeniu:focus-within .submeniu { 
+    display: block; 
+}
+main {
+     max-width: 960px; margin: auto; padding: 1.5rem; min-height: 55vh; 
+    }
+section { 
+    margin: 1rem 0 2rem; 
+}
+img { 
+    max-width: 100%; height: auto;
+ }
+footer {
+     padding: 1rem 1.5rem;
+     }
+table { 
+    border-collapse: collapse; max-width: 100%;
+ }
+th, td {
+     border: 1px solid #785443; padding: .5rem; text-align: left;
+ }
+@media (max-width: 600px) {
+    .meniu { 
+        flex-direction: column; 
+    }
+    .submeniu { 
+        display: block; position: static; padding-left: 1rem;
+    }
+    main { 
+        padding: 1rem; 
+    }
+    table { 
+        display: block; overflow-x: auto; 
+    }
+}

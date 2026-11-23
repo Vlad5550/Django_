@@ -1,0 +1,27 @@
+{% extends 'Atelier_Ciocolata/baza.html' %}
+{% load static %}
+{% block titlu %}Acasă - Atelier de ciocolată{% endblock %}
+{% block continut %}
+<h1>Atelier de ciocolată</h1>
+<section id="prezentare">
+    <h2>Prezentare</h2>
+    <p>{{ descriere }}</p>
+    <img src="{% static 'Atelier_Ciocolata/imagini/ciocolata.svg' %}" alt="Prăjituri cu ciocolată">
+</section>
+<section id="specialitati">
+    <h2>Specialități</h2>
+    <p>Prăjituri și produse de cofetărie pe bază de ciocolată.</p>
+</section>
+<section id="servicii">
+    <h2>Servicii</h2>
+    <p>Prezentarea produselor atelierului de ciocolată.</p>
+</section>
+<section id="ambalaje">
+    <h2>Ambalaje</h2>
+    <p>Ambalaje pentru produsele din atelier.</p>
+</section>
+<section id="evenimente">
+    <h2>Evenimente</h2>
+    <p>Evenimente la care participă atelierul.</p>
+</section>
+{% endblock %}

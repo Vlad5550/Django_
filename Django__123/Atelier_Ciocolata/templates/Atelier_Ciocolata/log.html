@@ -1,0 +1,38 @@
+{% extends 'Atelier_Ciocolata/baza.html' %}
+{% block titlu %}Log{% endblock %}
+{% block continut %}
+<h1>Log</h1>
+{% if eroare %}<p>{{ eroare }}</p>{% endif %}
+{% if tabel %}
+<table>
+    <thead><tr>{% for coloana in coloane %}<th>{{ coloana }}</th>{% endfor %}</tr></thead>
+    <tbody>
+    {% for rand in randuri %}
+        <tr>{% for valoare in rand %}<td>{{ valoare }}</td>{% endfor %}</tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<ul>
+    {% for accesare in accesari %}
+        <li><a href="{% url 'accesare' accesare.id %}">Accesare {{ accesare.id }}</a>: {{ accesare.string_url }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+{% if numar_accesari is not None %}
+<section><h2>Număr accesări</h2><p>{{ numar_accesari }}</p></section>
+{% endif %}
+{% if detalii is not None %}
+<section>
+    <h2>Detalii</h2>
+    <ul>{% for accesare in detalii %}<li>{{ accesare.data|date:'d.m.Y H:i:s' }}</li>{% endfor %}</ul>
+</section>
+{% endif %}
+<section>
+    <h2>Parametri</h2>
+    <p>Număr parametri: {{ numar_parametri }}</p>
+    <ul>{% for nume in parametri %}<li>{{ nume }}</li>{% endfor %}</ul>
+</section>
+<p>Pagina cea mai puțin accesată: {{ pagina_minima }}</p>
+<p>Pagina cea mai mult accesată: {{ pagina_maxima }}</p>
+{% endblock %}

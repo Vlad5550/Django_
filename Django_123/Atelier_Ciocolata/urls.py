@@ -13,7 +13,7 @@ urlpatterns = [
     path("produse", views.in_lucru, {"titlu": "Produse"}, name="produse"),
     path("contact", views.in_lucru, {"titlu": "Contact"}, name="contact"),
     path("cos_virtual", views.in_lucru, {"titlu": "Coș virtual"}, name="cos_virtual"),
-    # LAB 2, TASK 1, SUBPUNCTUL 5: rută regex /accesare<ID numeric>.
+    # LAB 2, TASK 1,  5: rută regex /accesare<ID numeric>.
     path("accesare/<int:id>/", views.accesare_id, name="accesare_id"),
  
 ]

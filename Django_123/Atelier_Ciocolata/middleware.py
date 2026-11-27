@@ -1,7 +1,7 @@
 from .views import Accesare, ACCESARI
 
 
-# LAB 1, CERINȚA 8; LAB 2, TASK 2, SUBPUNCTUL 6:
+# LAB 1, 8;   LAB 2, 2:
 # Obține IP-ul din X-Forwarded-For sau REMOTE_ADDR.
 def get_ip(request):
     lista_ip = request.META.get("HTTP_X_FORWARDED_FOR")
@@ -11,7 +11,7 @@ def get_ip(request):
 
 
 class AccesariMiddleware:
-    # LAB 1, CERINȚA 4; LAB 2, TASK 1, SUBPUNCTUL 1:
+    # LAB 1,  4; LAB 2, 1, 1:
     # Creează și memorează o instanță Accesare pentru fiecare pagină vizitată.
     def __init__(self, get_response):
         self.get_response = get_response
@@ -29,7 +29,7 @@ class AccesariMiddleware:
             request.accesare = accesare
             ACCESARI.append(accesare)
 
-            # LAB 1, CERINȚA 9: datele accesării apar în consola serverului.
+            # datele accesării apar în consola serverului.
             print(accesare)
 
         return self.get_response(request)

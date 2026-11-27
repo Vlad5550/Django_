@@ -7,7 +7,7 @@ from django.shortcuts import render
 from django.utils import timezone
 
 
-# LAB 2, TASK 1:
+# LAB 2,   1:
 # Lista globală păstrează accesările în memoria serverului.
 # Se golește la repornirea serverului.
 ACCESARI = []
@@ -52,14 +52,14 @@ class Accesare:
         return rezultat
 
     # LAB 1,  6:
-    # Returnează URL-ul complet sau doar calea paginii.
+    # Returnează URL-ul complet 
     def string_url(self):
         return self.url
-
+    # calea paginii
     def pagina(self):
         return urlsplit(self.url).path
 
-    # LAB 1, SUBPUNCTELE 3 și 7:
+    # LAB 1,  3 și 7:
     # Formatează data folosind numele românești ale zilelor și lunilor.
     def data_text(self, format="%A, %d %B %Y"):
         data = self.data
@@ -109,7 +109,7 @@ class Accesare:
 
 
 
-# LAB 1 și LAB 2, TASK 2:
+# LAB 1 și LAB 2,   2:
 # FUNCȚII VIEW PENTRU PAGINI
 def index(request):
     return render(request, "Atelier_Ciocolata/index.html")
@@ -125,7 +125,7 @@ def info(request):
     })
 
 
-# LAB 2, TASK 1,  5; TASK 2,  7.
+# LAB 2,   1,  5;    2,  7.
 def despre(request):
     return render(request, "Atelier_Ciocolata/despre.html")
 
@@ -134,13 +134,13 @@ def istoric(request):
     return render(request, "Atelier_Ciocolata/istoric.html")
 
 
-# LAB 2, TASK 2,  10:
+# LAB 2,   2,  10:
 # Pagină generică pentru funcționalitățile neimplementate.
 def in_lucru(request, titlu="Pagină"):
     return render(request, "Atelier_Ciocolata/in_lucru.html", {"titlu": titlu})
 
 
-# LAB 2, TASK 1,  4:
+# LAB 2,   1,  4:
 # SELECTAREA VALORII UNUI CÂMP PENTRU TABEL
 
 # Dicționarul permite asocierea numelui unui câmp cu valoarea sa.
@@ -160,8 +160,8 @@ def valoare_camp(accesare, camp):
     return campuri[camp]
 
 
-# LAB 2, TASK 1, SUBPUNCTELE 1-5:
-# FUNCȚIA PRINCIPALĂ A JURNALULUI
+# LAB 2,   1,   1-5:
+# functia principala a jurnalului
 def log(request):
 
     #  1: implicit, sunt selectate toate accesările.
@@ -265,7 +265,7 @@ def log(request):
             rand.append(valoare_camp(a, c))
         randuri.append(rand)
 
-    #  5: statistici privind paginile accesate.       Dicționarul numarari memorează pagina și numărul ei de accesări.
+    #  5: statistici privind paginile accesate.        Dicționarul numarari memorează pagina și numărul ei de accesări.
     numarari = {}
 
     for a in toate:
@@ -308,7 +308,7 @@ def log(request):
         "pagina_maxima": pagina_maxima,
     })
 
-# LAB 2, TASK 1,  5:
+# LAB 2,   1,  5:
 # re_path transmite ID-ul capturat ca string.
 # Căutăm accesarea și afișăm pagina individuală.
 def accesare_id(request, id):
@@ -324,3 +324,28 @@ def accesare_id(request, id):
 
     # Dacă ID-ul nu există, returnează eroarea HTTP 404.
     raise Http404("Accesarea nu exista")
+
+
+# 1. Middleware
+
+# Preia IP-ul, URL-ul și parametrii request-ului și creează un obiect Accesare.
+
+#----
+# 2. Clasa Accesare – Laboratorul 1
+
+# Păstrează datele, generează ID-uri, prelucrează parametrii, URL-ul și data/ora.
+
+
+# 3. Lista ACCESARI – Laboratorul 2
+
+# Păstrează obiectele Accesare în memoria serverului.
+
+
+# 4. Funcțiile view – views.py
+
+# Selectează accesările, calculează statistici și pregătește datele pentru pagini.
+#----
+
+# 5. Template-urile HTML
+
+# Afișează datele primite de la funcțiile view folosind sintaxa Django Template.

@@ -16,7 +16,7 @@ MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
-    # LAB 1, CERINȚA 8; LAB 2, TASK 2, SUBPUNCTUL 6: IP și jurnalul accesărilor.
+    # LAB 1,8;   LAB 2,2 IP și jurnalul accesărilor.
     "Atelier_Ciocolata.middleware.AccesariMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
@@ -39,7 +39,7 @@ TEMPLATES = [{
 }]
 WSGI_APPLICATION = "config.wsgi.application"
 
-# LAB 3, TASK 2: PostgreSQL este baza de date implicită.
+# LAB 3, 2: PostgreSQL este baza de date implicită.
 # Variabilele de mediu pot înlocui datele de conectare fără modificarea codului.
 # Pentru testare locală fără PostgreSQL: DB_ENGINE=sqlite.
 DATABASES ={ 
@@ -57,7 +57,7 @@ TIME_ZONE = "Europe/Bucharest"
 USE_I18N = True
 USE_TZ = True
 
-# LAB 2, TASK 2, SUBPUNCTELE 5 și 8: resurse statice și upload-uri.
+# LAB 2, TASK 2,  5 și 8: resurse statice și upload-uri.
 STATIC_URL = "/static/"
 STATIC_ROOT = BASE_DIR / "staticfiles"
 MEDIA_URL = "/media/"

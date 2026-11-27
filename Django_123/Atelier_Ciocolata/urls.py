@@ -1,9 +1,9 @@
 from django.urls import path, re_path
 from . import views
 
-# LAB 1, CERINȚELE 2 și 10: rutele pentru pagina principală și /info.
-# LAB 2, TASK 1: jurnal, istoric, despre și detaliile unei accesări.
-# LAB 2, TASK 2, SUBPUNCTUL 10: rutele paginilor încă neimplementate.
+# LAB 1, 2 și 10: rutele pentru pagina principală și /info.
+# LAB 2, 1: jurnal, istoric, despre și detaliile unei accesări.
+# LAB 2, 2, SUBPUNCTUL 10: rutele paginilor încă neimplementate.
 urlpatterns = [
     path("", views.index, name="index"),
     path("info", views.info, name="info"),
@@ -13,7 +13,7 @@ urlpatterns = [
     path("produse", views.in_lucru, {"titlu": "Produse"}, name="produse"),
     path("contact", views.in_lucru, {"titlu": "Contact"}, name="contact"),
     path("cos_virtual", views.in_lucru, {"titlu": "Coș virtual"}, name="cos_virtual"),
-    # LAB 2, TASK 1,  5: rută regex /accesare<ID numeric>.
+    # LAB 2, 1,  5: rută  /accesare<ID numeric>.
     path("accesare/<int:id>/", views.accesare_id, name="accesare_id"),
  
 ]

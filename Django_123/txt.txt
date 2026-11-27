@@ -13,23 +13,3 @@ python manage.py runserver
 
 
 
-
---Browser--
-
-    GET /info/
-
---Middleware--
-
-    Prelucrează cererea, de exemplu înregistrează IP-ul
-
---urls.py--
-
-    Găsește funcția asociată rutei
-
---views.py--
-
-    Execută logica și pregătește datele
-
---models.py / Database--
-
-    Citește sau modifică informațiile
